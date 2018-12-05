@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
 let prefix = botconfig.prefix;
 if (!message.content.startsWith(prefix)) return;
 
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You Don't Have MANAGE_MEMBERS!");
+  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You Don't Have MANAGE_MEMBERS Permission");
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("I Cant Find This User");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("They have been warned");

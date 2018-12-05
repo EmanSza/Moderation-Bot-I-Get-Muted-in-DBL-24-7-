@@ -10,7 +10,6 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Moderation", "Commands")
         .addField("Ban", "Bans a Member from the Server")
-    .addField("Softban", "Bans and unban a Member")
     .addField("Kick", "Kicks a Member From The Server")
     .addField("Report", "Reports a Member To The Staff Team")
     .addField("Mute", "Mute someone from Talking")

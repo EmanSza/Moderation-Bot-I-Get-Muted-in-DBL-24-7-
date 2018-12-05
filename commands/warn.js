@@ -34,7 +34,7 @@ if (!message.content.startsWith(prefix)) return;
   .addField("Reason", reason);
 
   let warnchannel = message.guild.channels.find(`name`, "mod-log");
-  if(!warnchannel) return message.reply("Couldn't find mod-log ");
+  if(!warnchannel) return message.reply("Please create a mod-log channel first!");
 
   warnchannel.send(warnEmbed);
 

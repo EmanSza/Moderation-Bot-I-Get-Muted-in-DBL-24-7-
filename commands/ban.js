@@ -24,7 +24,6 @@ if (!message.content.startsWith(prefix)) return
     if (!banchannel) return message.channel.send("Cant Find mod-log");
 
     message.guild.member(bUser).ban(breason);
-    message.delete();
     banchannel.send(banEmbed);
 
 }

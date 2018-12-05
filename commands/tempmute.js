@@ -8,23 +8,23 @@ const orange = botconfig.orange;
 module.exports.run = async (bot, message, args) => {
 
 
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("I ");
   if(args[0] == "help"){
     message.reply("Usage: !tempmute <user> <1s/m/h/d>");
     return;
   }
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!tomute) return message.reply("Couldn't find user.");
+  if(!tomute) return message.reply("Cant Find This User!");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("Please supply a reason.");
 
-  let muterole = message.guild.roles.find(`name`, "BOTmuted");
+  let muterole = message.guild.roles.find(`name`, "ServerWideMute");
   //start of create role
   if(!muterole){
     try{
       muterole = await message.guild.createRole({
-        name: "BOTmuted",
+        name: "ServerWideMute",
         color: "#000000",
         permissions:[]
       })

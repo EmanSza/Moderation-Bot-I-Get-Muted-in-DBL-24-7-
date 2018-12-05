@@ -20,7 +20,7 @@ if (!message.content.startsWith(prefix)) return;
     .addField("Reason", kReason);
 
     let kickChannel = message.guild.channels.find(`name`, "mod-log");
-    if(!kickChannel) return message.channel.send("Can't find mod-log channel.");
+    if(!kickChannel) return message.channel.send("Couldn't Find mod-log");
 
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);

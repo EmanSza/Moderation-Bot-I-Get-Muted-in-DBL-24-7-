@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Command Info", "Commands")
         .addField("help1", "Moderation Commands")
-    .addField("help2", "Fun Commands")
+    .addField("help2", "Extra  Commands")
     .addField("Offical Support Server", "https://discord.gg/stpVEJ4")
         .setColor('RANDOM');
 

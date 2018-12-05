@@ -21,7 +21,7 @@ if (!message.content.startsWith(prefix)) return
         .addField("Reason", breason);
 
     let banchannel = message.guild.channels.find(`name`, "mod-log");
-    if (!banchannel) return message.channel.send("Couldn't Find mod-log");
+    if (!banchannel) return message.channel.send("Please create a mod-log channel first!");
 
     message.guild.member(bUser).ban(breason);
     banchannel.send(banEmbed);

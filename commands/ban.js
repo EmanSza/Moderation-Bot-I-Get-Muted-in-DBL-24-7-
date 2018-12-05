@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
 if (!message.content.startsWith(prefix)) return
     
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.get(args[0]));
-    if (!bUser) return message.channel.send("Cant Find User!")
+    if (!bUser) return message.channel.send("Cant Find This User!")
     let breason = args.join(" ").slice(22);
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You Dont Have BAN_MEMBER Permission)");
     if (bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("You Can't Ban This Member)");

@@ -1,62 +1,33 @@
-const Discord = require('discord.js');
-exports.run = (client, message, args) => {
-    let reason = args.slice(1).join(' ');
-    let user = message.mentions.users.first();
-    let modlog = client.channels.find('name', 'mod-log');
-    let modRole = message.guild.roles.find('name', 'mod-log');
-    if (!message.member.roles.has(modRole.id)) {
-        return message.reply('you have insufficient permissions to use this command.').catch(console.error);
-    }
-    if (!modlog) return message.reply('I cannot find a mod-log channel!')
-    if (message.mentions.users.size < 1) return message.reply('you must mention a user to ban.').catch(console.error);
-    if (reason.length < 1) return message.reply('you must supply a reason to ban the mentioned user.');
+
+const Discord = require("discord.js")
+const botconfig = require("../botconfig.json");
+
+module.exports.run = async (bot, message, args) => {
+    let prefix = botconfig.prefix;
+if (!message.content.startsWith(prefix)) return
     
-    if (!message.guild.member(user).bannable) return message.reply('I cannot ban that user from the server.');
-    message.guild.ban(user, 1);
-    
-    client.channels.get(modlog.id).send({embed: {
-        color: 13174317,
-        author: {
-        name: `🚫 Banned ${user.username}#${user.discriminator} (${user.id})`,
-        icon_url: user.avatarURL
-        },
-        title: "",
-        url: "",
-        description: `\`\`\`js\nReason: ${reason}\nResponsible moderator: ${message.author.tag} (${message.author.id})\`\`\``,
-        // fields: [{
-        //     name: "Fields",
-        //     value: "They can have different fields with small headlines."
-        // },
-        // {
-        //     name: "Masked links",
-        //     value: "You can put [masked links](http://google.com) inside of rich embeds."
-        // },
-        // {
-        //     name: "Markdown",
-        //     value: "You can put all the *usual* **__Markdown__** inside of them."
-        // }
-        // ],
-        timestamp: new Date(),
-        footer: {
-        //icon_url: client.user.avatarURL,
-        text: "Moderation system powered by delet"
-        }
-    }
-});
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.get(args[0]));
+    if (!bUser) return message.channel.send("Cant Find User!")
+    let breason = args.join(" ").slice(22);
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("You Dont Have BAN_MEMBER Permission)");
+    if (bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("You Can't Ban This Member)");
 
-message.channel.send(`You successfully **banned** ${user.tag} for "${reason}". :ok_hand:`);
+    let banEmbed = new Discord.RichEmbed()
+        .setDescription("Banned User")
+        .setColor("#e56b00")
+        .addField("Banned User", `${bUser} With ID ${bUser.id}`)
+        .addField("In Channel", message.channel)
+        .addField("Time", message.createdAt)
+        .addField("Reason", breason);
 
-};
+    let banchannel = message.guild.channels.find(`name`, "mod-log");
+    if (!banchannel) return message.channel.send("Cant Find mod-log");
 
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: [],
-    permLevel: 0
-};
+    message.guild.member(bUser).ban(breason);
+    message.delete();
+    banchannel.send(banEmbed);
 
-exports.help = {
-    name: 'ban',
-    description: 'Bans the mentioned user from the server.',
-    usage: 'ban [user] [reason]'
-};
+}
+module.exports.help = {
+    name: "ban"
+}

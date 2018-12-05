@@ -12,8 +12,6 @@ module.exports.run = async (bot, message, args) => {
         .addField("Ban", "Bans a Member from the Server")
     .addField("Kick", "Kicks a Member From The Server")
     .addField("Tempmute", "Tempmute Someone From Talking")
-    .addField("Mute", "Mute someone from Talking")
-    .addField("Unmute", "Unmute a member from Talking")
     .addField("Warn", "Warn someone for breaking the rules")
         .setColor('RANDOM');
       

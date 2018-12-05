@@ -19,5 +19,5 @@ if (!message.content.startsWith(prefix)) return;
 }
 
 module.exports.help = {
-  name:"serverinfo"
+  name:"serverinfo" 
 }

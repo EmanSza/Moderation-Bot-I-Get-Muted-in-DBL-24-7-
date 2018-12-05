@@ -14,7 +14,7 @@ let bicon = bot.user.displayAvatarURL;
 
     let pingembed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .addField('API Ping : ', Math.floor(bot.ping) + 'ms')
+        .addField('Stress Ping : ', Math.floor(bot.ping) + 'ms')
         .addField('Bot Ping : ', Math.floor(botping) + 'ms')
         .addField('Message Ping : ', '~' + Math.round(msgping2) + 'ms')
         .setTimestamp(new Date())

@@ -33,14 +33,14 @@ if (!message.content.startsWith(prefix)) return;
   .addField("Number of Warnings", warns[wUser.id].warns)
   .addField("Reason", reason);
 
-  let warnchannel = message.guild.channels.find(`name`, "incidents");
-  if(!warnchannel) return message.reply("Couldn't find channel please add incidents ");
+  let warnchannel = message.guild.channels.find(`name`, "mod-log");
+  if(!warnchannel) return message.reply("Couldn't find mod-log ");
 
   warnchannel.send(warnEmbed);
 
   if(warns[wUser.id].warns == 2){
-    let muterole = message.guild.roles.find(`name`, "muted");
-    if(!muterole) return message.reply("Cannot Find Role ``Muted``, Please Create a ``Muted`` Role.");
+    let muterole = message.guild.roles.find(`name`, "ServerWideMute");
+    if(!muterole) return message.reply("Cannot Find Role ``Muted``, Please Create a ``ServerWideMute`` Role.");
 
     let mutetime = "10s";
     await(wUser.addRole(muterole.id));

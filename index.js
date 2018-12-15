@@ -28,7 +28,7 @@ bot.on('ready', () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: "With An Illusion",
+            name: "1.01",
             type: "playing",
             url:"https://www.twitch.tv/monstercat"
         }

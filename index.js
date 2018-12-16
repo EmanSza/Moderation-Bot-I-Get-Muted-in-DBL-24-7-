@@ -48,7 +48,29 @@ bot.on("message", async message => {
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
  
-//} Goes here 
+}else
+client.on('ready', () => {
+    setTimeout(function(){ // in leftToEight() milliseconds run this:
+        sendMessage(); // send the message once
+        var dayMillseconds = 1000 * 60 * 60 * 24;
+        setInterval(function(){ // repeat this every 24 hours
+            sendMessage();
+        }, dayMillseconds)
+    }, leftToEight())
+})
+
+function leftToEight(){
+    var d = new Date();
+    return (-d + d.setHours(8,0,0,0));
+}
+
+function sendMessage(){
+    var guild = client.guilds.get('523375958934421504');
+    if(guild && guild.channels.get('523961658922762300')){
+        guild.channels.get('channelid').send("Remember To Vote For Nova Here \n https://discordbots.org/bot/523375452669083655");
+    }
+
+}
  
 
 

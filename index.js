@@ -23,17 +23,23 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+bot.on("ready", async () => {
 
-bot.on('ready', () => {
-    bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: ` ${guild.memberCount} Members :D`,
-            type: "watching",
-            url:"https://www.twitch.tv/monstercat"
-        }
-    });
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+  bot.user.setActivity(`${guild.memberCount} Members :D`, {type: "WATCHING"});
+
 });
+
+//bot.on('ready', () => {
+   // bot.user.setStatus('available')
+    //bot.user.setPresence({
+      //  game: {
+        //    name: ` ${guild.memberCount} Members :D`,
+          //  type: "watching",
+            //url:"https://www.twitch.tv/monstercat"
+        //}
+    //});
+//});
 
 
 

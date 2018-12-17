@@ -57,9 +57,12 @@ bot.on("message", async message => {
        
 
  if(message.content === "nb.setmodlog") {
-        client.message.send(author, "Sorry User \n This Command is Down Due To Command Code Error \n But you can check for Update here \n https://emansza.github.io ");
-    }
-});
+        message.reply(author, "Sorry User \n This Command is Down Due To Command Code Error \n But you can check for Update here \n https://emansza.github.io ");
+    }else
+       if (message.content === 'nb.avatar') {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
+  }
 
 });
 

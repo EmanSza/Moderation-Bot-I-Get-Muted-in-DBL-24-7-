@@ -53,10 +53,13 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
- 
-//}
+ }else
+       
 
-
+ if(message.content === "nb.setmodlog") {
+        client.message.send(author, "Sorry User \n This Command is Down Due To Command Code Error \n But you can check for Update here \n https://emansza.github.io ");
+    }
+});
 
 });
 

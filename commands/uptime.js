@@ -4,12 +4,14 @@ const botconfig = require("../botconfig.json");
 module.exports.run = (bot, message, args) => {
   let prefix = botconfig.prefix;
 if (!message.content.startsWith(prefix)) return;
+  var days = Math.round(bot.uptime / (1000)) + " day(s),"
   var hrs = Math.round(bot.uptime / (1000 * 60 * 60)) + " hour(s),"
   var mins = " " + Math.round(bot.uptime / (1000 * 60)) % 60 + " minute(s), " 
   var sec = Math.round(bot.uptime / 1000) % 60 + " second(s)"
+  if (days == "0 day(s),") days = ""
   if (hrs == "0 hour(s),") hrs = ""
   if (mins == " 0 minute(s), ") mins = ""
-  let uptime = hrs+mins+sec
+  let uptime = days+hrs+mins+sec
   
   let em = new discord.RichEmbed()
   .setTitle(`**${bot.user.username} Uptime**\n`)

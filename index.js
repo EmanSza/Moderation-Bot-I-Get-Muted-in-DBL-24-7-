@@ -28,8 +28,8 @@ bot.on('ready', () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: "1.01",
-            type: "playing",
+            name: " ${guild.memberCount Members :D",
+            type: "watching",
             url:"https://www.twitch.tv/monstercat"
         }
     });

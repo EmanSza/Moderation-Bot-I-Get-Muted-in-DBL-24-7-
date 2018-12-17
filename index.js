@@ -28,7 +28,7 @@ bot.on('ready', () => {
     bot.user.setStatus('available')
     bot.user.setPresence({
         game: {
-            name: " ${guild.memberCount Members :D",
+            name: ` ${guild.memberCount} Members :D`,
             type: "watching",
             url:"https://www.twitch.tv/monstercat"
         }

@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Kick", "Kicks a Member From The Server")
     .addField("Tempmute", "Tempmute Someone From Talking")
     .addField("Warn", "Warn someone for breaking the rules")
+    .addField("Purge", "Clear Some Message's (Limit is 100)")
         .setColor('RANDOM');
       
 

@@ -1,6 +1,6 @@
 exports.run = async (client, message, args, level) => {
     const token = `process.env.token`
-    if (message.author.id == "519861424017768451)
+    if (message.author.id == "519861424017768451")
         message.channel.send('``Restarting The Bot``')
         .then(message => client.destroy())
         .then(() => client.login(process.env.token))

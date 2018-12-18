@@ -26,7 +26,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`${guild.memberCount} Members :D` , {type: "WATCHING"});
+  bot.user.setActivity(`{guild.memberCount} Members :D` , {type: "WATCHING"});
 
 });
 
@@ -55,5 +55,21 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 // }
 
+});
+bot.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'mod-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`${member} joined the Server`);
+});
+bot.on('guildMemberremove', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'mod-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`${member} left the Server`);
 });
 

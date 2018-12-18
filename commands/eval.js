@@ -1,10 +1,8 @@
 const Discord = require("discord.js");
-const botconfig = require("../botconfig.json");
 
 
 exports.run = async (bot, message, args, color, prefix) => {
-    let prefix = botconfig.prefix;
-if (!message.content.startsWith(prefix)) return
+if (!message.content.startsWith(nb.)) return
     if (message.author.id !== '519861424017768451' && message.author.id !== '519861424017768451') return;
     try {
         let codein = args.join(" ");

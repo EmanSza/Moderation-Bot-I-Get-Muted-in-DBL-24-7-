@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+//const dbl = new DBL('Your discordbots.org token', client);
 
 bot.login(process.env.token);
 
@@ -72,4 +73,6 @@ bot.on('guildMemberremove', member => {
   // Send the message, mentioning the member
   channel.send(`${member} left the Server`);
 });
-
+ /*dbl.on('posted', () => {
+  console.log('Server count posted!');
+})*/ 

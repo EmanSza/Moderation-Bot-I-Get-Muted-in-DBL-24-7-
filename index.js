@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 //const dbl = new DBL('Your discordbots.org token', client);
 
-bot.login(process.env.token);
+bot.login(NTI4NzUxNDMyNzc4NjQ1NTA1.Dwm1xQ.w_vDsMbVvxE7CIKGPmACWAvdTVc);
 
 fs.readdir("./commands/", (err, files) => {
 

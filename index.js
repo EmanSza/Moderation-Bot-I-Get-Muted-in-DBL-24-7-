@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+const client = new Discord.Client();
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyMzM3NTQ1MjY2OTA4MzY1NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQ3NDkyMzI3fQ.NHv_8gubRlhFzhddGZ54_sGvtAhkKNQ4kP1SCzLuADc', client);
 

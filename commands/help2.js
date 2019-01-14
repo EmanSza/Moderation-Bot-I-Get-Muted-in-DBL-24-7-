@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Extra", "Commands")
         .addField("Ping", "Find The Ping Of The Bot")
-    .addField("Serverinfo", "Find Info on the server")
-    .addField("Botinfo", "Find info on the bot")
+    .addField("Si", "Find Info on the server")
+    .addField("Bi", "Find info on the bot")
     .addField("uptime", "Find The Bots Uptime")
         .setColor('RANDOM');
 

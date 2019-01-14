@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Command Info", "Commands")
         .addField("help1", "Moderation Commands")
     .addField("help2", "Extra  Commands")
-    .addField("Offical Support Server", "https://discord.gg/stpVEJ4")
+    .addField("Offical Support Server", "https://discord.gg/jnUnXTX")
         .setColor('RANDOM');
 
     message.channel.send(botembed);

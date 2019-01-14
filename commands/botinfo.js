@@ -17,5 +17,5 @@ if (!message.content.startsWith(prefix)) return;
 }
 
 module.exports.help = {
-  name:"botinfo"
+  name:"bi"
 }

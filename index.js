@@ -18,7 +18,7 @@ dbl.on('error', e => {
 
 bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);
 
-fs.readdir("./commands/", (err, files) => {
+s.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -34,7 +34,6 @@ fs.readdir("./commands/", (err, files) => {
   
   });
 });
-
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);

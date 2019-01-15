@@ -9,7 +9,6 @@ exports.run = async (client, message, args, color) => {
 
   let memeEmbed = new RichEmbed() 
   .setColor(color) 
-  .setTitle(body.text)
   .setImage(body.url)
   .setTimestamp()
   .setFooter(`Request by: ${message.author.tag}`);

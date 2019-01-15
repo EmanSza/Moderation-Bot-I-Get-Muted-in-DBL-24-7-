@@ -18,7 +18,7 @@ dbl.on('error', e => {
 
 bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);
 
-s.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");

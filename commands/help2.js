@@ -10,10 +10,11 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Extra", "Commands")
         .addField("Ping", "Find The Ping Of The Bot")
-    .addField("Si", "Find Info on the server")
-    .addField("Bi", "Find info on the bot")
-    .addField("uptime", "Find The Bots Uptime")
-    .addField("youtube"," youtube search something")
+    .addField("Si","Find Info on the server")
+    .addField("Bi","Find info on the bot")
+    .addField("uptime","Find The Bots Uptime")
+    .addField("youtube","youtube search something")
+    .addField("meme","find a meme")
         .setColor('RANDOM');
 
     message.channel.send(botembed);

@@ -4,7 +4,6 @@ const botconfig = require("../botconfig.json");
 module.exports.run = (bot, message, args) => {
   let prefix = botconfig.prefix;
 if (!message.content.startsWith(prefix)) return;
-  var days = Math.round(bot.uptime / (1000 * 60)) + " day(s),"
   var hrs = Math.round(bot.uptime / (1000 * 60 * 60)) + " hour(s),"
   var mins = " " + Math.round(bot.uptime / (1000 * 60)) % 60 + " minute(s), " 
   var sec = Math.round(bot.uptime / 1000) % 60 + " second(s)"

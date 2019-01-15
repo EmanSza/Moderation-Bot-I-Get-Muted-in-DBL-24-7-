@@ -120,25 +120,5 @@ bot.on('guildBanRemove', function(guild, user) {
         log.sendMessage('**[Unbanned]** ' + user);
 
 });
-bot.on('guildMemberUpdate', function(guild, oldMember, newMember) {
 
-    //declare changes
-    var Changes = {
-        unknown: 0,
-        addedRole: 1,
-        removedRole: 2,
-        username: 3,
-        nickname: 4,
-        avatar: 5
-    };
-    var change = Changes.unknown;
 
-    //check if roles were removed
-    var removedRole = '';
-    oldMember.roles.every(function(value) {
-        if(newMember.roles.find('id', value.id) == null) {
-            change = Changes.removedRole;
-            removedRole = value.name;
-        }
-})
-bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);

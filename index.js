@@ -141,3 +141,4 @@ bot.on('guildMemberUpdate', function(guild, oldMember, newMember) {
             removedRole = value.name;
         }
 })
+bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);

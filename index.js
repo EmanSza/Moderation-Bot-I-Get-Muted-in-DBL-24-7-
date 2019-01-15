@@ -72,7 +72,7 @@ bot.on('channelCreate', async channel => {
   console.log(`${channel.name} has been created.`);
 
 if (channel.type != 'text') return;
-  let sChannel = channel.guild.channels.find('name', 'name channel here');
+  let sChannel = channel.guild.channels.find(ch => ch.name === 'mod-log');
   sChannel.send(`The channel ${channel} has been created`);
 
 });

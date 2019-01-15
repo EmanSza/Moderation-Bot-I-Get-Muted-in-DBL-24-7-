@@ -4,6 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const client = new Discord.Client();
+const CHANNEL = 'log';
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyMzM3NTQ1MjY2OTA4MzY1NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQ3NDkyMzI3fQ.NHv_8gubRlhFzhddGZ54_sGvtAhkKNQ4kP1SCzLuADc', client);
 
@@ -95,3 +96,48 @@ bot.on('guildMemberremove', member => {
  /*dbl.on('posted', () => {
   console.log('Server count posted!');
 })*/ 
+bot.on('guildBanAdd', function(guild, user) {
+
+    //log to console
+    console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);
+
+    //post in the guild's log channel
+    var log = guild.channels.find(ch => ch.name === 'global-mod-log');
+    if (log != null)
+        log.sendMessage('**[Banned]** ' + user);
+
+});
+
+//user has been unbanned
+bot.on('guildBanRemove', function(guild, user) {
+
+    //log to console
+    console.log('[' + guild.name + '][UNBAN] ' + user.username + '#' + user.discriminator);
+
+    //post in the guild's log channel
+    var log = guild.channels.find(ch => ch.name === 'global-mod-log');
+    if (log != null)
+        log.sendMessage('**[Unbanned]** ' + user);
+
+});
+ot.on('guildMemberUpdate', function(guild, oldMember, newMember) {
+
+    //declare changes
+    var Changes = {
+        unknown: 0,
+        addedRole: 1,
+        removedRole: 2,
+        username: 3,
+        nickname: 4,
+        avatar: 5
+    };
+    var change = Changes.unknown;
+
+    //check if roles were removed
+    var removedRole = '';
+    oldMember.roles.every(function(value) {
+        if(newMember.roles.find('id', value.id) == null) {
+            change = Changes.removedRole;
+            removedRole = value.name;
+        }
+});

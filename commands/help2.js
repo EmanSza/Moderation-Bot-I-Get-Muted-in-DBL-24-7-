@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Si", "Find Info on the server")
     .addField("Bi", "Find info on the bot")
     .addField("uptime", "Find The Bots Uptime")
+    .addField("youtube"," youtube search something")
         .setColor('RANDOM');
 
     message.channel.send(botembed);

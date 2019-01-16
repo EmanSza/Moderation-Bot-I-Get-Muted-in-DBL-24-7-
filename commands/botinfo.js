@@ -12,7 +12,7 @@ if (!message.content.startsWith(prefix)) return;
     .setThumbnail(bicon)
     .addField("Bot Name", bot.user.username)
     .addField("Created On", bot.user.createdAt)
-    .addField("Watching"," `${bot.guilds.size} Guilds`);
+    .addField("Watching", `bot.guilds.siz} "Guilds");
 
     message.channel.send(botembed);
 }

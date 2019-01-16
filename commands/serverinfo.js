@@ -10,11 +10,16 @@ if (!message.content.startsWith(prefix)) return;
     .setDescription("Server Information")
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
-
+    .addField("ID", message.guild.id, true)
+   .addField("Name", message.guild.name, true)
+   .addField("Owner", message.guild.owner.user.tag, true)
+   .addField("Region", message.guild.region, true)
+   .addField("Channels", message.guild.channels.size, true)
+   .addField("Members", message.guild.memberCount, true)
+   .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Online", online.size, true)
+   .addField("Roles", message.guild.roles.size, true);
     message.channel.send(serverembed);
 }
 

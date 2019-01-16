@@ -18,7 +18,6 @@ if (!message.content.startsWith(prefix)) return;
    .addField("Members", message.guild.memberCount, true)
    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
-   .addField("Online", online.size, true)
    .addField("Roles", message.guild.roles.size, true);
     message.channel.send(serverembed);
 }

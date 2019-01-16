@@ -100,7 +100,7 @@ bot.on('guildBanAdd', function(guild, user) {
 
     //log to console
     console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);
-    console.loh(` Banned By ${message.author.username}`);
+    console.log(` Banned By ${message.author.username}`);
     //post in the guild's log channel
     var log = guild.channels.find(ch => ch.name === 'global-mod-log');
     if (log != null)

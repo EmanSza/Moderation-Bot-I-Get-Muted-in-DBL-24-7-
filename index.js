@@ -120,6 +120,6 @@ bot.on('guildBanRemove', function(guild, user) {
         log.sendMessage('**[Unbanned]** ' + user);
 
 });
-bot.login1(`NTE0ODY4MDY5MTY5MTAyODQ4.Dtc1jQ.swrSOW50gK5gXTLEOriot9zhvQg`);
+bot.login(process.env.bot1);
 
 

@@ -11,7 +11,8 @@ if (!message.content.startsWith(prefix)) return;
     .setColor("#15f153")
     .setThumbnail(bicon)
     .addField("Bot Name", bot.user.username)
-    .addField("Created On", bot.user.createdAt);
+    .addField("Created On", bot.user.createdAt)
+    .addField("Watching",`${guild.memberCount} Guilds`);
 
     message.channel.send(botembed);
 }

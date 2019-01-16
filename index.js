@@ -99,7 +99,7 @@ bot.on('guildMemberremove', member => {
 bot.on('guildBanAdd', function(guild, user) {
 
     //log to console
-    console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);
+    console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator "#" + ' message.author.username' );
 
     //post in the guild's log channel
     var log = guild.channels.find(ch => ch.name === 'global-mod-log');

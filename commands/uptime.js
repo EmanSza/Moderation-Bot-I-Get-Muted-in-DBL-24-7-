@@ -9,7 +9,7 @@ if (!message.content.startsWith(prefix)) return;
   var sec = Math.round(bot.uptime / 1000) % 60 + " second(s)"
   if (hrs == "0 hour(s),") hrs = ""
   if (mins == " 0 minute(s), ") mins = ""
-  let uptime = days+hrs+mins+sec
+  let uptime = +hrs+mins+sec
   
   let em = new discord.RichEmbed()
   .setTitle(`**${bot.user.username} Uptime**\n`)

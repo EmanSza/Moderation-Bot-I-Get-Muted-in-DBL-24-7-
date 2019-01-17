@@ -16,6 +16,11 @@ dbl.on('posted', () => {
 dbl.on('error', e => {
  console.log(`Oops! ${e}`);
 })
+bot.on('ready', () => {
+    setInterval(() => {
+        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+    }, 1800000);
+});
 
 bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);
 

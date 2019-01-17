@@ -19,7 +19,10 @@ dbl.on('error', e => {
 bot.on('ready', () => {
     setInterval(() => {
         dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
-    }, 1800000);
+    }, 1);
+});
+dbl.getStats("523375452669083655").then(stats => {
+    console.log(stats) // {"server_count":2,"shards":[]}
 });
 
 bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);

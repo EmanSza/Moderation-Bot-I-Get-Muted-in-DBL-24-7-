@@ -24,6 +24,12 @@ bot.on('ready', () => {
 dbl.getStats("523375452669083655").then(stats => {
     console.log(stats) // {"server_count":2,"shards":[]}
 });
+dbl.getBot("523375452669083655").then(bot => {
+    console.log(bot.username)
+});
+dbl.getUser("519861424017768451").then(user => {
+    console.log(user.username) 
+});
 
 bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);
 

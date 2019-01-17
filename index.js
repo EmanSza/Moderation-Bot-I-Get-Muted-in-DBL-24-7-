@@ -18,7 +18,7 @@ dbl.on('error', e => {
 })
 bot.on('ready', () => {
     setInterval(() => {
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+        dbl.postStats(client.guilds.size, client.shards.total);
     }, 1);
 });
 dbl.getStats("523375452669083655").then(stats => {

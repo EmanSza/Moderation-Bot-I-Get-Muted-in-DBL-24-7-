@@ -13,7 +13,7 @@ if (!message.content.startsWith(prefix)) return;
     .addField("Bot Name", bot.user.username)
     .addField("Created On", bot.user.createdAt)
     .addField("Watching", `${bot.guilds.size} Guilds`)
-    .setDescription(`[Our Website](https://illusionco.me)`);
+    .setDescription(`[Our Website](https://illusionco.me) \n [Vote Here](https://discordbots.org/bot/523375452669083655)`);
 
     message.channel.send(botembed);
 }

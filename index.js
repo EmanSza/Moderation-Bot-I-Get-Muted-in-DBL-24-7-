@@ -4,7 +4,7 @@ const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const client = new Discord.Client();
-const CHANNEL = 'log';
+const CHANNEL = 'global-mod-log';
 const DBL = require("dblapi.js");
 const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyMzM3NTQ1MjY2OTA4MzY1NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQ3NzUyODQ2fQ._aqLPSuEL6YIFnEV5QvG2BBUFyf9Tn87hmjEqJWky7M', client);
 

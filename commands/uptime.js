@@ -1,25 +1,53 @@
-const discord = require('discord.js');
+const Discord = require("discord.js");
+const moment = require("moment");
 const botconfig = require("../botconfig.json");
 
-module.exports.run = (bot, message, args) => {
-  let prefix = botconfig.prefix;
-if (!message.content.startsWith(prefix)) return;
-  var hrs = Math.round(bot.uptime / (1000 * 60 * 60)) + " hour(s),"
-  var mins = " " + Math.round(bot.uptime / (1000 * 60)) % 60 + " minute(s), " 
-  var sec = Math.round(bot.uptime / 1000) % 60 + " second(s)"
-  if (hrs == "0 hour(s),") hrs = ""
-  if (mins == " 0 minute(s), ") mins = ""
-  let uptime = +hrs+mins+sec
-  
-  let em = new discord.RichEmbed()
-  .setTitle(`**${bot.user.username} Uptime**\n`)
-  .setDescription(`**Serving ${bot.guilds.size} servers for ${uptime}!**`)
-  .setColor("RANDOM")
-  .setTimestamp()
-  .setFooter(`Requested by ${message.author.username}.`)
-  message.channel.send({embed: em})
+function convertMS(ms) {
+    var d, h, m, s;
+    s = Math.floor(ms / 1000);
+    m = Math.floor(s / 60);
+    s = s % 60;
+    h = Math.floor(m / 60);
+    m = m % 60;
+    d = Math.floor(h / 24);
+    h = h % 24;
+    return {
+        d: d
+        , h: h
+        , m: m
+        , s: s
+    };
+};
+
+
+
+exports.run = (bot, message, args) => {
+
+
+
+    let prefix = botconfig.prefix;
+    if (!message.content.startsWith(prefix)) return;
+
+
+
+
+    let u = convertMS(bot.uptime);
+    let uptime = u.d + " days : " + u.h + " hours : " + u.m + " minutes : " + u.s + " seconds"
+
+
+
+    
+    const duration = moment.duration(bot.uptime)
+    let bicon = bot.user.displayAvatarURL;
+    const botembed = new Discord.RichEmbed()
+        .addBlankField()
+        .setColor(`RANDOM`)
+        .addField(`<:uptimeicon:483872427940511744>`, `**Uptime :**  ${uptime}`)
+        .setThumbnail(bicon);
+
+    message.channel.send(botembed);
 }
 
 module.exports.help = {
-  name: "uptime"
-}
+    name: "uptime"
+} 

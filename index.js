@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(` Added Global Logs` , {type: "WATCHING"});
+  bot.user.setActivity(`nb.help | www.illusionco.me` , {type: "WATCHING"});
 
 });
 

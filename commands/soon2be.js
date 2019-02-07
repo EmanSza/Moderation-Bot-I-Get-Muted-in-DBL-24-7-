@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bicon)
         .addField("Updates", "Future Update List")
         .addField("Number 1"," Planning To Add GLobal Kick Mute Logs")
-        .addField("Number 2", "Plan on Adding Anti Spam To The bot") true
+        .addField("Number 2", "Plan on Adding Anti Spam To The bot")
         .setColor('RANDOM');
       
 

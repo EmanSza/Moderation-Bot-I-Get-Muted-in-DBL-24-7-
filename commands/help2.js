@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Bi","Find info on the bot")
     .addField("uptime","Find The Bots Uptime")
     .addField("youtube","youtube search something")
-    .addField('Updates", "Find out on Future Updates")
+    .addField("Updates", "Find out on Future Updates")
     .addField("meme","find a meme")
         .setColor('RANDOM');
 

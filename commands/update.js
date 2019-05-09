@@ -3,7 +3,7 @@ exports.run = async (client, message, args, level) => {
     if (message.author.id == "519861424017768451")
         message.channel.send('``Restarting The Bot``')
         .then(message => client.destroy())
-        .then(() => client.login(“NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo”))
+        .then(() => client.login('NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo'))
        message.channel.send('...')
        message.channel.send(`You Are Not The Owner`)
         

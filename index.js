@@ -34,7 +34,7 @@ dbl.isWeekend().then(weekend => {
     if (weekend) console.log("Woo! Multiplier time!")
 });
 
-bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.Dx5oVg.8MJbS5H-3jHBeGgiZAni9SSRARo`);
+bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.XPUsdw.OIhzNNI4PsQmSlMbIV6dsRP_zjw`);
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -137,6 +137,5 @@ bot.on('guildBanRemove', function(guild, user) {
         log.sendMessage('**[Unbanned]** ' + user);
 
 });
-
 
 

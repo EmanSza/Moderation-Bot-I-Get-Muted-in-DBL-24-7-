@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`nb.help | www.illusionco.me` , {type: "WATCHING"});
+  bot.user.setActivity(`nb.| Bot is Currently Having Issues.` , {type: "WATCHING"});
 
 });
 
@@ -137,6 +137,6 @@ bot.on('guildBanRemove', function(guild, user) {
         log.sendMessage('**[Unbanned]** ' + user);
 
 });
-bot.login(process.env.bot1);
+
 
 

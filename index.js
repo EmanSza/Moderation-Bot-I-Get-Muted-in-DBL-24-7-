@@ -119,7 +119,7 @@ bot.on('guildBanAdd', function(guild, user) {
     console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);
     console.log(` Banned By ${message.author.username}`);
     //post in the guild's log channel
-    var log = guild.channels.find(ch => ch.name === 'global-mod-log');
+    var log = guild.channels.find(ch => ch.name === 'mod-log');
     if (log != null)
         log.sendMessage('**[Banned]** ' + user);
 
@@ -132,7 +132,7 @@ bot.on('guildBanRemove', function(guild, user) {
     console.log('[' + guild.name + '][UNBAN] ' + user.username + '#' + user.discriminator);
 
     //post in the guild's log channel
-    var log = guild.channels.find(ch => ch.name === 'global-mod-log');
+    var log = guild.channels.find(ch => ch.name === 'mod-log');
     if (log != null)
         log.sendMessage('**[Unbanned]** ' + user);
 

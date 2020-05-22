@@ -137,10 +137,4 @@ bot.on('guildBanRemove', function(guild, user) {
         log.sendMessage('**[Unbanned]** ' + user);
 
 });
-doopliss.guilds.forEach(guild => {
-    guild.channels.first().createInvite()
-      .then(inv => console.log(`${guild.name} | ${inv.url}`));
-      // Outputs the guild name + the invite URL
-  });
-
 

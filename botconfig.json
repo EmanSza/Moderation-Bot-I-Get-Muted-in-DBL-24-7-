@@ -4,5 +4,6 @@
   "orange": "#ff6a00",
   "green": "#00ff26",
   "purple": "#d604cf",
-  "owners": ["519861424017768451"]
+  "owners": ["519861424017768451"],
+  "bannedusers": [" "]
   }

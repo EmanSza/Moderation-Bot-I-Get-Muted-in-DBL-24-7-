@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`nb.| Look Gamers!` , {type: "WATCHING"});
+  bot.user.setActivity(`Report Bugs to EmanSza#5474` , {type: "WATCHING"});
 
 });
 

@@ -91,8 +91,7 @@ bot.on('guildMemberremove', member => {
   if (!channel) return;
   channel.send(`${member} left the Server`);
 });
-//} here
-)*/ 
+//} here)*/ 
 /*bot.on('guildBanAdd', function(guild, user) {
     //log to console
     console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);

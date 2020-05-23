@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`Report Bugs to EmanSza#5474` , {type: "WATCHING"});
+  bot.user.setActivity(`ReMaintence is happening Joim our support server please https://discord.gg/9JbKgUm` , {type: "WATCHING"});
 
 });
 
@@ -113,7 +113,7 @@ bot.on('guildMemberremove', member => {
  /*dbl.on('posted', () => {
   console.log('Server count posted!');
 })*/ 
-bot.on('guildBanAdd', function(guild, user) {
+/*bot.on('guildBanAdd', function(guild, user) {
 
     //log to console
     console.log('[' + guild.name + '][BAN] ' + user.username + '#' + user.discriminator);
@@ -136,4 +136,4 @@ bot.on('guildBanRemove', function(guild, user) {
     if (log != null)
         log.sendMessage('**[Unbanned]** ' + user);
 
-});
+}); */

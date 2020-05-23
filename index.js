@@ -109,7 +109,7 @@ bot.on('guildBanRemove', function(guild, user) {
     var log = guild.channels.find(ch => ch.name === 'mod-log');
     if (log != null)
          log.sendMessage('**[Unbanned]** ' + user)
-}); */'
+}); */
 dbl.on('posted', () => {
   console.log('Server count posted!');
 })

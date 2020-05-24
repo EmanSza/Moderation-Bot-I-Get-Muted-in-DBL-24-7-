@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`Maintence is happening Join our support server please https://discord.gg/9JbKgUm` , {type: "WATCHING"});
+  bot.user.setActivity(`Join our support server https://discord.gg/9JbKgUm` , {type: "WATCHING"});
 
 });
 
@@ -65,7 +65,7 @@ bot.on("message", async message => {
 
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
-  let cmd = messageArray[0].toLowerCase;
+  let cmd = messageArray[0];
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);

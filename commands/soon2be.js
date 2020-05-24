@@ -9,8 +9,8 @@ module.exports.run = async (bot, message, args) => {
     let botembed = new Discord.RichEmbed()
         .setThumbnail(bicon)
         .addField("Updates", "Future Update List")
-        .addField("Number 1"," Planning To Add GLobal Kick Mute Logs")
-        .addField("Number 2", "Plan on Adding Anti Spam To The bot")
+        .addField("Number 1","Update Bot code from v11 to v12")
+        .addField("Number 2", "Make bot more simple to use")
         .setColor('RANDOM');
       
 

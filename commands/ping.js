@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
+  if(!botconfig.bannedusers.includes(message.author.id)) return msg.reply(`This command is owner only`);
   let prefix = botconfig.prefix;
     if (!message.content.startsWith(prefix)) return;
 let bicon = bot.user.displayAvatarURL;

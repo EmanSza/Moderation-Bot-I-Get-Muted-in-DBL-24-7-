@@ -110,28 +110,4 @@ bot.on('guildBanRemove', function(guild, user) {
     if (log != null)
          log.sendMessage('**[Unbanned]** ' + user)
 }); */
-dbl.on('posted', () => {
-  console.log('Server count posted!');
-})
-
-dbl.on('error', e => {
- console.log(`Oops! ${e}`);
-})
-bot.on('ready', () => {
-    setInterval(() => {
-        dbl.postStats(bot.guilds.size);
-    }, 900000);
-});
-dbl.getStats("523375452669083655").then(stats => {
-    console.log(stats) // {"server_count":2,"shards":[]}
-});
-dbl.getBot("523375452669083655").then(bot => {
-    console.log(bot.username)
-});
-dbl.getUser("519861424017768451").then(user => {
-    console.log(user.username) 
-});
-dbl.isWeekend().then(weekend => {
-    if (weekend) console.log("Woo! Multiplier time!")
-});
 

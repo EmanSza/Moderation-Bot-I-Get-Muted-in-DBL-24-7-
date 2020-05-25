@@ -68,6 +68,7 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot,message,args);
+  if(!botconfig.bannedusers.includes(message.author.id)) return message.reply(`You've you banned, to appeal this ban go to https://discord.gg/2xu4Mgc`);
 // }
 
 });

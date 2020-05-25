@@ -6,7 +6,7 @@ const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args, color) => {
     let prefix = botconfig.prefix;
-    if (message.author.id !== '519861424017768451' && message.author.id !== '519861424017768451') return;
+    if(msg.author.id !== "519861424017768451") return msg.reply('Owner only');
 if (!message.content.startsWith(prefix)) return;
   if(args <=0) return msg.reply(`Say what ?`);
   let content = args.join(" ");

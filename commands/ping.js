@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
-    if (!message.content.startsWith(prefix)) return;
 if(botconfig.bannedusers.includes(message.author.id)) return msg.reply(`You have you banned, to appeal this ban go to https://discord.gg/2xu4Mgc`);
 let bicon = bot.user.displayAvatarURL;
 

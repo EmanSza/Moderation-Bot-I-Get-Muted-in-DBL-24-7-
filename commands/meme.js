@@ -5,7 +5,7 @@ exports.run = async (client, message, args, color) => {
   
   let m = await message.channel.send(`*Please Wait...*`);
   try {
-  const { body } = await get('https://api-to.get-a.life/meme')
+  const { body } = await get('https://www.reddit.com/r/dankmemes/')
 
   let memeEmbed = new RichEmbed() 
   .setColor(color) 

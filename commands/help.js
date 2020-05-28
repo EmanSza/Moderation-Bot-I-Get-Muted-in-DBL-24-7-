@@ -11,8 +11,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Command Info", "Commands")
         .addField("help1", "Moderation Commands")
     .addField("help2", "Extra  Commands")
-    .addField("ModLogs","Create A Channel Called Mod-logs to get bot logs")
-    .addField("BanLogs", "Create a Channel Called mod-log For Ban Logs")
+    .addField("modLogs","Create A Channel Called mod-logs to get bot logs")
     .addField("Offical Support Server", "https://discord.gg/9JbKgUm")
         .setColor('RANDOM');
 

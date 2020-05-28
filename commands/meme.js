@@ -1,31 +1,40 @@
-const { RichEmbed } = require('discord.js'), 
-      { get } = require('node-superfetch');
+const randomPuppy = require('random-puppy');
 
-exports.run = async (client, message, args, color) => {
-  
-  let m = await message.channel.send(`*Please Wait...*`);
-  try {
-  const { body } = await get('https://www.reddit.com/r/dankmemes/')
+module.exports.run = async (bot, message, args) => {
 
-  let memeEmbed = new RichEmbed() 
-  .setColor(color) 
-  .setImage(body.url)
-  .setTimestamp()
-  .setFooter(`Request by: ${message.author.tag}`);
-  
-  message.channel.send(memeEmbed).then(() => { m.delete();});
-  } catch (e) {
-    message.channel.send(`Oh no an error occurred :( \`${e.message}\` try again later!`);
-  } 
-}
+    let reddit = [
+        "meme",
+        "animemes",
+        "MemesOfAnime",
+        "animememes",
+        "AnimeFunny",
+        "dankmemes",
+        "dankmeme",
+        "wholesomememes",
+        "MemeEconomy",
+        "techsupportanimals",
+        "meirl",
+        "me_irl",
+        "2meirl4meirl",
+        "AdviceAnimals"
+    ]
 
-exports.conf = {
-    aliases: [],
-    cooldown: "5"
-}
+    let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
-exports.help = {
-    name: "meme",
-    description: "Get a random meme",
-    usage: "meme"
+    message.channel.startTyping();
+
+    randomPuppy(subreddit).then(async url => {
+            await message.channel.send({
+                files: [{
+                    attachment: url,
+                    name: 'meme.png'
+                }]
+            }).then(() => message.channel.stopTyping());
+    }).catch(err => console.error(err));
+
+};
+
+module.exports.help = {
+    name: 'meme',
+    aliases: ['memes']
 }

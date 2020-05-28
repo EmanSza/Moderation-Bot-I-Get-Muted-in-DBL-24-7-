@@ -1,40 +1,21 @@
-const randomPuppy = require('random-puppy');
+const Discord = require("discord.js");
+const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
 
-    let reddit = [
-        "meme",
-        "animemes",
-        "MemesOfAnime",
-        "animememes",
-        "AnimeFunny",
-        "dankmemes",
-        "dankmeme",
-        "wholesomememes",
-        "MemeEconomy",
-        "techsupportanimals",
-        "meirl",
-        "me_irl",
-        "2meirl4meirl",
-        "AdviceAnimals"
-    ]
+    let prefix = botconfig.prefix;
+    if (!message.content.startsWith(prefix)) return;
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+        .setThumbnail(bicon)
+        .addField("Command Error", "Error")
+        .addField("Meme Command Is Currently Down", "Please Join our Support Server For More Information")
+    .addField("Offical Support Server", "https://discord.gg/9JbKgUm")
+        .setColor('RANDOM');
 
-    let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
-    message.channel.startTyping();
-
-    randomPuppy(subreddit).then(async url => {
-            await message.channel.send({
-                files: [{
-                    attachment: url,
-                    name: 'meme.png'
-                }]
-            }).then(() => message.channel.stopTyping());
-    }).catch(err => console.error(err));
-
-};
+    message.channel.send(botembed);
+}
 
 module.exports.help = {
-    name: 'meme',
-    aliases: ['memes']
+    name: "help"
 }

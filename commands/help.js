@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("help2", "Extra  Commands")
     .addField("ModLogs","Create A Channel Called Mod-logs to get bot logs")
     .addField("BanLogs", "Create a Channel Called mod-log For Ban Logs")
-    .addField("Offical Support Server", "https://discord.gg/D5ssaHb")
+    .addField("Offical Support Server", "https://discord.gg/9JbKgUm")
         .setColor('RANDOM');
 
     message.channel.send(botembed);

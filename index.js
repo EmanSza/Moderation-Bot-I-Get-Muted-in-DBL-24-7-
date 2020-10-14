@@ -55,7 +55,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity(`Join our support server https://discord.gg/9JbKgUm` , {type: "WATCHING"});
+  bot.user.setActivity(`nb. || novabot.xyz` , {type: "WATCHING"});
 
 });
 

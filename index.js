@@ -6,7 +6,7 @@ bot.commands = new Discord.Collection();
 const client = new Discord.Client();
 const CHANNEL = 'global-mod-log';
 const DBL = require("dblapi.js");
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyMzM3NTQ1MjY2OTA4MzY1NSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTQ3NzUyODQ2fQ._aqLPSuEL6YIFnEV5QvG2BBUFyf9Tn87hmjEqJWky7M', client);
+const dbl = new DBL(HIDDEN, client);
 
 
 dbl.on('posted', () => {
@@ -34,7 +34,7 @@ dbl.isWeekend().then(weekend => {
     if (weekend) console.log("Woo! Multiplier time!")
 });
 
-bot.login(`NTIzMzc1NDUyNjY5MDgzNjU1.XPUsdw.OIhzNNI4PsQmSlMbIV6dsRP_zjw`);
+bot.login(HIDDEN);
 
 fs.readdir("./commands/", (err, files) => {
 
